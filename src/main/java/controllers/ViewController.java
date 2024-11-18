@@ -3,8 +3,28 @@ package controllers;
 import javafx.stage.Stage;
 import views.MainMenu;
 
+import javax.swing.text.View;
+
 public class ViewController {
-    public static void mainView(Stage stage) throws Exception {
+    private static Stage stage;
+
+    public ViewController(Stage stage) {
+        ViewController.stage = stage;
+    }
+
+    public static void getMainView() throws Exception {
         MainViewController.view(stage);
+    }
+
+    public static void getSettingView() throws Exception {
+        SettingViewController.view(stage);
+    }
+
+    public void setStage(Stage stage) {
+        ViewController.stage = stage;
+    }
+
+    public Stage getStage() {
+        return stage;
     }
 }
