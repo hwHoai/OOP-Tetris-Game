@@ -24,9 +24,18 @@ public class ViewController {
         ChooseLevelViewController.view(stage);
     }
 
+    public static void getWinView() throws Exception {
+        WinViewController.view(stage);
+    }
+
+    public static void getGameOverView() throws Exception {
+        GameOverViewController.view(stage);
+    }
+
     public void setStage(Stage stage) {
         ViewController.stage = stage;
     }
+
 
     public Stage getStage() {
         return stage;

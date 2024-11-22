@@ -1,6 +1,5 @@
 package oopprj.tetrisgame.tetris;
 
-import com.almasb.fxgl.core.View;
 import controllers.ViewController;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -15,8 +14,7 @@ public class TetrisLauncher extends Application {
         stage.setHeight(heightScreen);
 
         new ViewController(stage);
-
-        ViewController.getChooseLevelView();
+        ViewController.getGameOverView();
     }
 
     public static void main(String[] args) {
