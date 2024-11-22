@@ -20,6 +20,10 @@ public class ViewController {
         SettingViewController.view(stage);
     }
 
+    public static void getChooseLevelView() throws Exception {
+        ChooseLevelViewController.view(stage);
+    }
+
     public void setStage(Stage stage) {
         ViewController.stage = stage;
     }
