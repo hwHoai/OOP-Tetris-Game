@@ -1,0 +1,60 @@
+.back-button {
+    -fx-background-color: inherit;
+}
+
+.tittle {
+    -fx-min-width: 430;
+    -fx-alignment: center;
+    -fx-translate-y: 50;
+}
+#musicIcon {
+    -fx-background-color: inherit;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-translate-x: 43;
+    -fx-translate-y: 200;
+}
+#soundIcon {
+    -fx-background-color: inherit;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-translate-x: 50;
+    -fx-translate-y: 300;
+}
+
+#musicSlider {
+    -fx-translate-x: 130;
+    -fx-translate-y: 170;
+    -fx-min-width: 250;
+
+}
+#musicSlider .track {
+    -fx-pref-height: 6;
+    -fx-background-color: #d9d9d9;
+}
+
+#musicSlider .thumb {
+    -fx-background-color: #0d2e43;
+    -fx-background-radius: 99999999;
+    -fx-pref-width: 12;
+    -fx-pref-height: 12;
+
+}
+#soundSlider {
+    -fx-translate-x: 130;
+    -fx-translate-y: 270;
+    -fx-min-width: 250;
+
+}
+#soundSlider .track {
+    -fx-pref-height: 6;
+    -fx-background-color: #d9d9d9;
+}
+
+#soundSlider .thumb {
+    -fx-background-color: #0d2e43;
+    -fx-background-radius: 99999999;
+    -fx-pref-width: 12;
+    -fx-pref-height: 12;
+
+}
