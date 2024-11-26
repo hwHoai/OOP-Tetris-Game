@@ -1,0 +1,14 @@
+
+.choose_level_button {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #0D2E43;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+}
+
+.choose_level_button:hover {
+    -fx-background-color: #145a7c;
+}
