@@ -13,28 +13,20 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.SettingViewController"
             stylesheets="@../../../assets/styles/setting-menu.css">
-    <Button styleClass="back-button">
+    <Button styleClass="back-button" onAction="#backToMainScreen">
         <graphic>
             <ImageView fx:id="backBtnIcon" fitWidth="40" fitHeight="40"/>
         </graphic>
     </Button>
 
-    <VBox styleClass="tittle">
-        <Label styleClass="tittle" text="Settings">
+        <Label styleClass="tittle" text="Settings" layoutY="50">
             <font>
                 <Font name="Arial" size="40"/>
             </font>
         </Label>
-    </VBox>
-    <VBox>
-        <ImageView fx:id="musicIcon" fitWidth="60" fitHeight="60"/>
-        <Slider fx:id="musicSlider" min="0" max="100" value="50" blockIncrement="1"/>
-    </VBox>
-    <VBox>
-        <ImageView fx:id="soundIcon" fitWidth="60" fitHeight="60"/>
-        <Slider fx:id="soundSlider" min="0" max="100" value="50" blockIncrement="1"/>
-
-    </VBox>
-
+        <ImageView fx:id="musicIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="200"/>
+        <Slider fx:id="musicSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="230" onMouseDragged="#onMusicSliderChange"/>
+        <ImageView fx:id="soundIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="300"/>
+        <Slider fx:id="soundSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="330" onMouseDragged="#onSoundSliderChange"/>
 
 </AnchorPane>
