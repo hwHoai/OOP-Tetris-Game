@@ -35,8 +35,8 @@ src/\
 - Use `@FXML` annotation for UI components and event handlers.
 
 ## Controllers
-- Controllers define the route to display screen of the game. 
-  * Example: 
+- Controllers define the route to display screen of the game.
+  * Example:
     * MainView -> SettingView.
     * MainView -> ChooseLevelView -> PlayGameView
     * ...
@@ -47,34 +47,57 @@ src/\
 - Controllers should have a method view to display the view in `views` package.
 - Use `@FXML` to bind UI components and event handlers.
 - For more information about the controller and its structure, please research about `MVC` pattern.
-- Example:
+  - Example:
+    * In ViewControllers
+    ```java
+      package controllers;
+  
+      import javafx.stage.Stage;
+      import views.MainMenu;
+    
+      import javax.swing.text.View;
+    
+      public class ViewController {
+        private static Stage stage;
+  
+        public static void getMainView() throws Exception {
+            MainViewController.view(stage);
+        }
+  
+        public static void getSettingView() throws Exception {
+            SettingViewController settingViewController = new SettingViewController();
+            settingViewController.view(stage);
+        }
+      }
+    ```
+    * In OtherControllers.java
 
-```java
-package controllers;
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
-
-public class ExampleController implements ExampleInterface {
-  @FXML
-  private Button exampleButton;
-
-  @FXML
-  public void onExampleButtonClick() {
-    // Handle button click
-  }
-
-  public void view(Stage stage) {
-    // Display view
-  }
-
-  @Override
-  public void exampleMethod() {
-    // Implement interface method
-  }
-}
-```
+    ```java
+    package controllers;
+    
+    import javafx.fxml.FXML;
+    import javafx.scene.control.Button;
+    import javafx.stage.Stage;
+    
+    public class ExampleController implements ExampleInterface {
+      @FXML
+      private Button exampleButton;
+    
+      @FXML
+      public void onExampleButtonClick() {
+        // Handle button click
+      }
+    
+      public void view(Stage stage) {
+        // Display view
+      }
+    
+      @Override
+      public void exampleMethod() {
+        // Implement interface method
+      }
+    }
+    ```
 
 ## Views
 - Views should be placed in the `views` package.
@@ -88,16 +111,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ExampleView {
-    public void displayView(Stage stage) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("example-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+  public void displayView(Stage stage) {
+    try {
+      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("example-view.fxml"));
+      Scene scene = new Scene(fxmlLoader.load());
+      stage.setScene(scene);
+      stage.show();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
+  }
 }
 ```
 
@@ -108,9 +131,9 @@ public class ExampleView {
 package services;
 
 public class ExampleService {
-    public void performService() {
-        // Business logic here
-    }
+  public void performService() {
+    // Business logic here
+  }
 }
 ```
 
@@ -121,8 +144,8 @@ public class ExampleService {
 package ultils;
 
 public class BackwardScreen {
-    public void backToMainView() {
-        // Logic here
-    }
+  public void backToMainView() {
+    // Logic here
+  }
 }
 ```
