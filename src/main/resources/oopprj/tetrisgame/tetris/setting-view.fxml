@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Font?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.SettingViewController"
-            prefHeight="1170.0" prefWidth="2532.0">
+            stylesheets="@../../../assets/styles/setting-menu.css">
+    <Button styleClass="back-button" onAction="#backToMainScreen">
+        <graphic>
+            <ImageView fx:id="backBtnIcon" fitWidth="40" fitHeight="40"/>
+        </graphic>
+    </Button>
+
+        <Label styleClass="tittle" text="Settings" layoutY="50">
+            <font>
+                <Font name="Arial" size="40"/>
+            </font>
+        </Label>
+        <ImageView fx:id="musicIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="200"/>
+        <Slider fx:id="musicSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="230" onMouseDragged="#onMusicSliderChange"/>
+        <ImageView fx:id="soundIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="300"/>
+        <Slider fx:id="soundSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="330" onMouseDragged="#onSoundSliderChange"/>
 
 </AnchorPane>

@@ -17,7 +17,8 @@ public class ViewController {
     }
 
     public static void getSettingView() throws Exception {
-        SettingViewController.view(stage);
+        SettingViewController settingViewController = new SettingViewController();
+        settingViewController.view(stage);
     }
 
     public static void getChooseLevelView() throws Exception {
