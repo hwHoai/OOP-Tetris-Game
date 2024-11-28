@@ -1,6 +1,3 @@
-Here is the corrected `GUIDELINES.md` file:
-
-
 Project Implementation and Code Structure Guidelines
 
 ## Table of Contents
