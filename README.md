@@ -12,17 +12,17 @@ Project Implementation and Code Structure Guidelines
 6. [Services](#services)
 
 ## Project Structure
-src/
-├── main/
-│   ├── java/
-│   │   ├── controllers/
-│   │   ├── services/
-│   │   ├── views/
-│   │   └── oopprj/tetrisgame/tetris/
-│   └── resources/
+src/\
+├── main/\
+│   ├── java/\
+│   │   ├── controllers/\
+│   │   ├── services/\
+│   │   ├── views/\
+│   │   └── oopprj/\
+│       └── tetrisgame/\
+│           └── tetris/\
 │       └── assets/
-└── test/
-└── java/
+
 
 
 ## Coding Standards
