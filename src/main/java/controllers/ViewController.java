@@ -18,7 +18,7 @@ public class ViewController {
 
     public static void getSettingView() throws Exception {
         SettingViewController settingViewController = new SettingViewController();
-                settingViewController.view(stage);
+        settingViewController.view(stage);
     }
 
     public void setStage(Stage stage) {
