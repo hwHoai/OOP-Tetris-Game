@@ -10,6 +10,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import static controllers.LoseGameViewController.handleTryAgainButtonClick;
+
 public class LoseGame {
     private static int score = 0;
 
@@ -28,6 +30,13 @@ public class LoseGame {
         Button tryAgainButton = new Button("Again");
         tryAgainButton.setFont(Font.font("Arial", 16));
         tryAgainButton.setStyle("-fx-background-color: #00FF00; -fx-text-fill: black;");
+        tryAgainButton.setOnAction(e -> {
+            try {
+                handleTryAgainButtonClick();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
         Button homeButton = new Button("Home");
         homeButton.setFont(Font.font("Arial", 16));
@@ -45,10 +54,6 @@ public class LoseGame {
 
     public static void display (Stage stage) throws Exception {
         VBox gameOverScreen = createGameOverScreen(stage);
-
-        Button tryAgainButton = (Button) gameOverScreen.getChildren().get(3);
-        tryAgainButton.setOnAction(e -> stage.setScene(new Scene(gameOverScreen, 502, 1088)));
-
         stage.setScene(new Scene(gameOverScreen, 502, 1088));
         stage.show();
     }

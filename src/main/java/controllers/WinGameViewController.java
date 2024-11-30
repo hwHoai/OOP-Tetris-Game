@@ -7,4 +7,8 @@ public class WinGameViewController {
     public static void view(Stage stage) throws Exception {
         WinGame.display(stage);
     }
+
+    public static void handleClickNextLevelButton() throws Exception {
+//        Logic here
+    }
 }

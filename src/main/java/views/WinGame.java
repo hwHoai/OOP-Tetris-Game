@@ -28,6 +28,13 @@ public class WinGame {
         Button nextLevelButton = new Button("Next level");
         nextLevelButton.setFont(Font.font("Arial", 16));
         nextLevelButton.setStyle("-fx-background-color: #00FF00; -fx-text-fill: black;");
+        nextLevelButton.setOnAction(e -> {
+            try {
+                handleClickNextLevelButton();
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
         Button homeButton = new Button("Home");
         homeButton.setFont(Font.font("Arial", 16));
@@ -44,9 +51,6 @@ public class WinGame {
     }
     public static void display(Stage stage) throws Exception {
         VBox winScreen = createWinScreen(stage);
-
-        Button nextLevelButton = (Button) winScreen.getChildren().get(3);
-        nextLevelButton.setOnAction(e -> stage.setScene(new Scene(winScreen, 502, 1088)));
 
         stage.setScene(new Scene(winScreen, 502, 1088));
         stage.show();
