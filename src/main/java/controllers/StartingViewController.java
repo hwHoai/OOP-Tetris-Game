@@ -10,7 +10,7 @@ import javafx.scene.text.Font;
 
 public class StartingViewController {
     @FXML
-    private ImageView group62;
+    private ImageView group63;
     
     @FXML
     private Text text;  // Thêm chú thích @FXML cho trường text
@@ -22,7 +22,7 @@ public class StartingViewController {
     @FXML
     public void initialize() {
 
-        group62.setImage(new Image(getClass().getResource("/images/Group 62.png").toExternalForm()));
+        group63.setImage(new Image(getClass().getResource("/images/Group 63.png").toExternalForm()));
         
     }
 }
