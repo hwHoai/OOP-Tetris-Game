@@ -25,12 +25,12 @@ public class ViewController {
         ChooseLevelViewController.view(stage);
     }
 
-    public static void winGameView() throws Exception {
-        WinGameViewController.view();
+    public static void getWinGameView() throws Exception {
+        WinGameViewController.view(stage);
     }
 
-    public static void loseGameView() throws Exception {
-        LoseGameViewController.view();
+    public static void getLoseGameView() throws Exception {
+        LoseGameViewController.view(stage);
     }
 
     public void setStage(Stage stage) {

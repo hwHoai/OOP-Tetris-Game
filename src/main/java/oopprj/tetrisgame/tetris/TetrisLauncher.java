@@ -17,7 +17,7 @@ public class TetrisLauncher extends Application {
 
         new ViewController(stage);
 
-        ViewController.getMainView();
+        ViewController.winGameView();
     }
 
     public static void main(String[] args) {
