@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.MainViewController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <!-- Game Title -->
+    <Label fx:id="titleLabel" text="TETRIS" style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #000000;"/>
+
+    <!-- Buttons -->
+    <Button text="New Game" style="-fx-font-size: 18px;" onAction="#onNewGameButtonClick"/>
+    <Button text="Continue" style="-fx-font-size: 18px;" onAction="#onContinueButtonClick"/>
+    <Button text="Settings" style="-fx-font-size: 18px;" onAction="#onSettingsButtonClick"/>
 </VBox>

@@ -14,7 +14,7 @@ public class TetrisLauncher extends Application {
         stage.setHeight(heightScreen);
 
         new ViewController(stage);
-        ViewController.getGameOverView();
+        ViewController.getStartingView();
     }
 
     public static void main(String[] args) {

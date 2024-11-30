@@ -1,0 +1,24 @@
+.starting_button {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #0D2E43;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+}
+
+.starting_button:hover {
+    -fx-background-color: #145a7c;
+}
+
+.starting_view_wrap {
+    -fx-background-color: #FFFFFF;
+}
+
+.starting_header {
+    -fx-fill: black;
+    -fx-font-family: "Arial";
+    -fx-font-size: 100px;
+    -fx-font-weight: 600;
+}

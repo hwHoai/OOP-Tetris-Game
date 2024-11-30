@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import oopprj.tetrisgame.tetris.TetrisLauncher;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class SettingMenu {
