@@ -13,13 +13,12 @@
       alignment="CENTER"
       stylesheets="@../../../styles/starting.css">
 
-    <!-- Adjust the alignment and margins for the ImageView -->
     <ImageView fx:id="group63" 
                fitHeight="100.0" 
                fitWidth="100.0" 
                preserveRatio="true">
         <VBox.margin>
-            <Insets top="150" /> <!-- Adjust top margin -->
+            <Insets top="100" />
         </VBox.margin>
     </ImageView>
 
