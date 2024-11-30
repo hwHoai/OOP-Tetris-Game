@@ -1,0 +1,8 @@
+.box{
+    -fx-background-color: #0D2E43;
+     -fx-background-radius: 5px;
+}
+.btn{
+    -fx-background-color: inherit;
+    -fx-cursor: hand;
+}
