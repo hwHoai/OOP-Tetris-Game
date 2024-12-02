@@ -60,5 +60,9 @@ public class PlayingViewController implements BackwardScreen {
         }
     }
 
+    public void openSettingView() throws Exception {
+        ViewController.getSettingView();
+    }
+
 }
 
