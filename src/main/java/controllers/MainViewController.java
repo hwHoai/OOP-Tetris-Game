@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import oopprj.tetrisgame.tetris.TetrisLauncher;
 import views.MainMenu;
@@ -9,6 +10,8 @@ import views.MainMenu;
 public class MainViewController {
     @FXML
     private Label welcomeText;
+    @FXML
+    private VBox helloView;
 
     public static void view(Stage stage) throws Exception {
         MainMenu.displayView(stage);
