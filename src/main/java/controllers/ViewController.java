@@ -10,7 +10,7 @@ public class ViewController {
     }
 
     public static void getStartingView() throws Exception {
-        StartingViewController.view(stage);
+        MainViewController.view(stage);
     }
 
     public static void getSettingView() throws Exception {
