@@ -1,0 +1,30 @@
+.win_view_wrap {
+    -fx-background-color: #0D2E43;
+}
+.result_header{
+    -fx-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 600;
+}
+.result_score{
+    -fx-fill: white;
+    -fx-font-size: 16px;
+}
+.result_home_button{
+    -fx-pref-width: 81.2px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #00FF00;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-background-radius: 16px;
+    -fx-cursor: hand;
+}
+.result_action_button{
+    -fx-pref-width: 168px;
+    -fx-pref-height: 35px;
+    -fx-background-color: #00FF00;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}

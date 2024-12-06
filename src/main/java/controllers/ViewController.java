@@ -1,9 +1,6 @@
 package controllers;
 
 import javafx.stage.Stage;
-import views.MainMenu;
-
-import javax.swing.text.View;
 
 public class ViewController {
     private static Stage stage;
@@ -35,6 +32,7 @@ public class ViewController {
     public void setStage(Stage stage) {
         ViewController.stage = stage;
     }
+
 
     public Stage getStage() {
         return stage;
