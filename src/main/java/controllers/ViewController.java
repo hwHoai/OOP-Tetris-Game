@@ -9,7 +9,7 @@ public class ViewController {
         ViewController.stage = stage;
     }
 
-    public static void getStartingView() throws Exception {
+    public static void getMainView() throws Exception {
         MainViewController.view(stage);
     }
 
