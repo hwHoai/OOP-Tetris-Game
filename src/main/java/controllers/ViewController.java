@@ -14,12 +14,20 @@ public class ViewController {
     }
 
     public static void getSettingView() throws Exception {
-        SettingViewController.view(stage);
+        SettingViewController settingViewController = new SettingViewController();
+        settingViewController.view(stage);
     }
 
     public static void getChooseLevelView() throws Exception {
-        ChooseLevelViewController.view(stage);
+        ChooseLevelViewController chooseLevelViewController = new ChooseLevelViewController();
+        chooseLevelViewController.view(stage);
     }
+
+    public static void getPlayingView() throws Exception {
+        PlayingViewController playingViewController = new PlayingViewController();
+        playingViewController.view(stage);
+    }
+
 
     public void setStage(Stage stage) {
         ViewController.stage = stage;
