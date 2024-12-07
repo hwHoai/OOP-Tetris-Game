@@ -19,7 +19,7 @@ public class TetrisLauncher extends Application {
 
         new ViewController(stage);
 
-        ViewController.getMainView();
+        ViewController.getPlayingView();
     }
 
     public static void main(String[] args) {
