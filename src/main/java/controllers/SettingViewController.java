@@ -3,6 +3,7 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -46,10 +47,17 @@ public class SettingViewController implements BackwardScreen {
         }
     }
 
-    //If the user click the back button, the view will back to the main screen
+    //If the user click the back button, the view will back to the previous screen
+
+    @Override
+    public void backToPrevScreen() throws Exception {
+        ViewController.getStage().setScene(ViewController.previousScene);
+        ViewController.getStage().show();
+    }
+
     @Override
     public void backToMainScreen() throws Exception {
-        ViewController.getMainView();
+        // Do nothing
     }
 
     //------------------------------------------------------------------------------------------------------//
@@ -72,4 +80,3 @@ public class SettingViewController implements BackwardScreen {
     //------------------------------------------------------------------------------------------------------//
     //End.
 }
-

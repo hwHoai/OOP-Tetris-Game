@@ -12,3 +12,11 @@
 .choose_level_button:hover {
     -fx-background-color: #145a7c;
 }
+
+.back_button {
+    -fx-background-color: inherit;
+}
+
+.back_button:hover {
+    -fx-cursor: hand;
+}

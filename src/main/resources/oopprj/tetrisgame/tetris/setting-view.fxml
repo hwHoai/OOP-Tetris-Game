@@ -10,7 +10,7 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.SettingViewController"
             stylesheets="@../../../assets/styles/setting-menu.css">
-    <Button styleClass="back-button" onAction="#backToMainScreen">
+    <Button styleClass="back-button" onAction="#backToPrevScreen">
         <graphic>
             <ImageView fx:id="backBtnIcon" fitWidth="40" fitHeight="40"/>
         </graphic>

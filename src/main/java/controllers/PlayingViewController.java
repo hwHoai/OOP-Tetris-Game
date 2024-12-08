@@ -39,6 +39,11 @@ public class PlayingViewController implements BackwardScreen {
         ViewController.getMainView();
     }
 
+    @Override
+    public void backToPrevScreen() throws Exception {
+        // Do nothing
+    }
+
     @FXML
     public void initialize() {
         homeIcon.setImage(new Image(getClass().getResource("/images/home.png").toExternalForm()));
@@ -61,8 +66,8 @@ public class PlayingViewController implements BackwardScreen {
     }
 
     public void openSettingView() throws Exception {
+        ViewController.setPreviousScene(ViewController.getStage().getScene());
         ViewController.getSettingView();
     }
 
 }
-

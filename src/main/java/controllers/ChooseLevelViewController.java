@@ -19,5 +19,23 @@ public class ChooseLevelViewController {
         backArrowIcon.setImage(new Image(getClass().getResource("/images/arrow_left.png").toExternalForm()));
     }
 
-}
+    @FXML
+    public void clickBackBtnHandler() throws Exception {
+        ViewController.getMainView();
+    }
 
+    @FXML
+    public void clickEasyBtnHandler() throws Exception {
+        ViewController.getPlayingView();
+    }
+
+    @FXML
+    public void clickNormalBtnHandler() throws Exception {
+        ViewController.getPlayingView();
+    }
+
+    @FXML void clickHardBtnHandler() throws Exception {
+        ViewController.getPlayingView();
+    }
+
+}

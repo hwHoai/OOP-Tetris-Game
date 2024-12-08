@@ -17,19 +17,26 @@
         <padding>
             <Insets top="10.0" left="10.0" right="10.0" bottom="10.0"/>
         </padding>
-        <ImageView  fx:id="backArrowIcon" fitHeight="30.0" fitWidth="30.0"/>
+        <Button styleClass="back_button" onAction="#clickBackBtnHandler">
+            <graphic>
+                <ImageView  fx:id="backArrowIcon" fitHeight="30.0" fitWidth="30.0"/>
+            </graphic>
+        </Button>
 
     </HBox>
 
     <VBox alignment="CENTER" spacing="32.0" VBox.vgrow="ALWAYS">
         <Button text="EASY"
                 styleClass="choose_level_button"
+                onAction="#clickEasyBtnHandler"
         />
         <Button text="NORMAL"
                 styleClass="choose_level_button"
+                onAction="#clickNormalBtnHandler"
         />
         <Button text="HARD"
                 styleClass="choose_level_button"
+                onAction="#clickHardBtnHandler"
         />
     </VBox>
 </VBox>
