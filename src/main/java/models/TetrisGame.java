@@ -128,7 +128,7 @@ public class TetrisGame {
                 if (grid[y][x] != null) { // Nếu có màu, vẽ ô đó
                     gc.setFill(grid[y][x]);
 
-                    gc.fillRect(x * 30, y * 30, 30, 30);
+                    gc.fillRect(x * 30 - 1 , y * 30 - 1, 30 - 1, 30 - 1);
                 }
             }
         }
@@ -136,7 +136,7 @@ public class TetrisGame {
         // Vẽ Tetrimino hiện tại
         gc.setFill(currentTetrimino.getColor());
         for (int[] block : currentTetrimino.getBlocks()) {
-            gc.fillRect(block[0] * 30, block[1] * 30, 30, 30);
+            gc.fillRect((block[0] * 30) - 1, (block[1] * 30) -1, 30 - 1, 30 - 1);
         }
     }
 }
