@@ -30,7 +30,6 @@ public class ViewController {
     }
 
 
-
     public void setStage(Stage stage) {
         ViewController.stage = stage;
     }

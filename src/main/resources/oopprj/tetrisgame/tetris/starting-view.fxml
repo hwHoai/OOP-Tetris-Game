@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.MainViewController"
+      alignment="CENTER"
+      stylesheets="@../../../styles/starting.css">
+
+    <ImageView fx:id="startingImage" 
+               fitHeight="100.0" 
+               fitWidth="100.0" 
+               preserveRatio="true">
+        <VBox.margin>
+            <Insets top="70" />
+        </VBox.margin>
+    </ImageView>
+
+    <Text fx:id="text" text="Tetris" styleClass="starting_header">
+        <VBox.margin>
+            <Insets top="-30" />
+             <Insets bottom="10" />
+        </VBox.margin>
+    </Text>
+
+    <VBox alignment="CENTER" spacing="10.0">
+        <Button text="CONTINUE"
+                styleClass="starting_button"
+
+        />
+        <Button text="NEW GAME"
+                styleClass="starting_button"
+                onAction = "#onNewGameButtonClick"
+
+        />
+        <Button text="SETTING"
+                styleClass="starting_button"
+                onAction = "#onSettingButtonClick"
+        />
+    </VBox>
+</VBox>

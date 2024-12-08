@@ -24,8 +24,12 @@
             </graphic>
         </Button>
 
-        <Region HBox.hgrow="ALWAYS" />
-        <ImageView  fx:id="settingIcon" fitHeight="30.0" fitWidth="30.0"/>
+                <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#openSettingView" styleClass="btn">
+            <graphic>
+                <ImageView  fx:id="settingIcon" fitHeight="30.0" fitWidth="30.0"/>
+            </graphic>
+        </Button>
     </HBox>
 
     <HBox alignment="CENTER">
@@ -69,12 +73,12 @@
 <!--    fx:id="gamePane"-->
     <Pane styleClass="box" style="-fx-pref-width: 385; -fx-pref-height: 600; -fx-background-color: black;">
 <!--         Thêm Canvas vào đây -->
-        <VBox.margin>
+
+        <VBox.margin >
             <Insets top="15" />
         </VBox.margin>
         <Canvas fx:id="gameCanvas" width="385.0" height="600.0" />
     </Pane>
-
 
     <HBox>
         <VBox.margin>
