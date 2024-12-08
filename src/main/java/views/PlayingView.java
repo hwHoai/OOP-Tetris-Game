@@ -1,5 +1,6 @@
 package views;
 
+import controllers.PlayingViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -14,6 +15,9 @@ public class PlayingView {
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
             stage.show();
+            scene.getRoot().requestFocus();
+            PlayingViewController controller = fxmlLoader.getController();
+            scene.setOnKeyPressed(e -> controller.handleKeyPress(e));
         }
         catch (IOException e) {
             throw new RuntimeException(e);
