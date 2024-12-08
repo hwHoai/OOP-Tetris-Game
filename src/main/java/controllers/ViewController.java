@@ -3,6 +3,7 @@ package controllers;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import controllers.PlayingViewController;
+import models.TetrisGame;
 
 public class ViewController {
     public static Scene previousScene;
@@ -29,10 +30,31 @@ public class ViewController {
         chooseLevelViewController.view(stage);
     }
 
-    public static void getPlayingView() throws Exception {
+    public static void getPlayingView(String level) throws Exception {
         setPreviousScene(stage.getScene());
-        PlayingViewController playingViewController = new PlayingViewController();
-        playingViewController.view(stage);
+                PlayingViewController playingViewController = new PlayingViewController();
+        switch (level) {
+            case "easy":
+                TetrisGame.setScorePlus(100);
+                playingViewController.view(stage);
+                break;
+            case "normal":
+                TetrisGame.setScorePlus(75);
+                playingViewController.view(stage);
+                break;
+            case "hard":
+                TetrisGame.setScorePlus(50);
+                playingViewController.view(stage);
+                break;
+        }
+    }
+
+  public static void getWinGameView() throws Exception {
+        WinGameViewController.view(stage);
+    }
+
+    public static void getLoseGameView() throws Exception {
+        LoseGameViewController.view(stage);
     }
 
 

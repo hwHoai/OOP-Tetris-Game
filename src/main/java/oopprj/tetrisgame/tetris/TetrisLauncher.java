@@ -5,12 +5,11 @@ import controllers.ViewController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.File;
 
 public class TetrisLauncher extends Application {
-    public static double widthScreen = 430;
-    public static double heightScreen = 930 ;
+    public static double widthScreen =430 ;//430.0
+    public static double heightScreen =930 ;//932.0
     @Override
     public void start(Stage stage) throws Exception {
 

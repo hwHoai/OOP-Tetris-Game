@@ -26,16 +26,16 @@ public class ChooseLevelViewController {
 
     @FXML
     public void clickEasyBtnHandler() throws Exception {
-        ViewController.getPlayingView();
+        ViewController.getPlayingView("easy");
     }
 
     @FXML
     public void clickNormalBtnHandler() throws Exception {
-        ViewController.getPlayingView();
+        ViewController.getPlayingView("normal");
     }
 
     @FXML void clickHardBtnHandler() throws Exception {
-        ViewController.getPlayingView();
+        ViewController.getPlayingView("hard");
     }
 
 }

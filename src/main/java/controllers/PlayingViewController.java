@@ -93,7 +93,11 @@ public class PlayingViewController implements BackwardScreen {
             public void handle(long now) {
                 if (now - lastUpdate >= 500_000_000) {
                     if (!tetrisGame.moveTetrimino(0, 1)) {
-                        lockAndSpawnTetrimino();
+                        try {
+                            lockAndSpawnTetrimino();
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                     tetrisGame.render();
                     lastUpdate = now;
@@ -110,7 +114,7 @@ public class PlayingViewController implements BackwardScreen {
 
 
 
-    private void lockAndSpawnTetrimino() {
+    private void lockAndSpawnTetrimino() throws Exception {
         tetrisGame.lockTetrimino();
         scoreLabel.setText(String.valueOf(tetrisGame.getScore()));
 

@@ -1,4 +1,5 @@
 package models;
+import controllers.ViewController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -8,6 +9,7 @@ public class TetrisGame {
     private Tetrimino currentTetrimino;
     private final GraphicsContext gc;
     private int score;
+    private static int scorePlus;
 
     public TetrisGame(int width, int height, GraphicsContext gc) {
         this.width = width;
@@ -78,16 +80,23 @@ public class TetrisGame {
         }
     }
 
-    public void lockTetrimino() {
+    public void lockTetrimino() throws Exception {
         for (int[] block : currentTetrimino.getBlocks()) {
             int x = block[0], y = block[1];
             if (y >= 0) grid[y][x] = currentTetrimino.getColor(); // Lưu màu sắc vào grid
+        }
+
+        // Nếu hang đầu tiên có màu, kết thúc trò chơi
+        for(Color col : grid[0]) {
+            if(col != null) {
+                ViewController.getLoseGameView();
+            }
         }
         clearFullRows();
 //        spawnNewTetrimino();
     }
 
-    private void clearFullRows() {
+    private void clearFullRows() throws Exception {
         for (int y = 0; y < height; y++) {
             boolean isFull = true;
             for (int x = 0; x < width; x++) {
@@ -98,7 +107,10 @@ public class TetrisGame {
             }
             if (isFull) {
                 clearRow(y);
-                score += 100; // Thêm điểm cho mỗi hàng
+                score += scorePlus; // Thêm điểm cho mỗi hàng
+                if(score >= 100) {
+                    ViewController.getWinGameView();
+                }
             }
         }
     }
@@ -138,5 +150,13 @@ public class TetrisGame {
         for (int[] block : currentTetrimino.getBlocks()) {
             gc.fillRect((block[0] * 30) - 1, (block[1] * 30) -1, 30 - 1, 30 - 1);
         }
+    }
+
+    public int getScorePlus() {
+        return scorePlus;
+    }
+
+    public static void setScorePlus(int scorePlus) {
+        TetrisGame.scorePlus = scorePlus;
     }
 }
