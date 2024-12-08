@@ -6,8 +6,8 @@ import javafx.stage.Stage;
 
 
 public class TetrisLauncher extends Application {
-    public static double widthScreen =400 ;//430.0
-    public static double heightScreen =700 ;//932.0
+    public static double widthScreen = 430.0;
+    public static double heightScreen = 932.0;
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -17,7 +17,7 @@ public class TetrisLauncher extends Application {
 
         new ViewController(stage);
 
-        ViewController.getPlayingView();
+        ViewController.getWinGameView();
     }
 
     public static void main(String[] args) {
