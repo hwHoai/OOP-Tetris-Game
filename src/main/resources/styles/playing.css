@@ -1,8 +1,19 @@
 .box{
     -fx-background-color: #0D2E43;
      -fx-background-radius: 5px;
+
 }
+.boxT {
+    -fx-border-color: gray;
+    -fx-border-width: 2;
+    -fx-background-color: black;
+}
+
 .btn{
     -fx-background-color: inherit;
     -fx-cursor: hand;
+}
+.status_label{
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
 }

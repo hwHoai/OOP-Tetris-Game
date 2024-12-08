@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import controllers.PlayingViewController;
 
 public class ViewController {
     public static Scene previousScene;
