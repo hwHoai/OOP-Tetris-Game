@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+
+
+<?import javafx.scene.canvas.Canvas?>
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.PlayingViewController"
+      style="-fx-padding: 15;"
+      stylesheets="@../../../styles/playing.css">
+
+    <HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.0">
+        <Button focusTraversable="false" onAction="#backToMainScreen" styleClass="btn">
+            <graphic>
+                <ImageView  fx:id="homeIcon" fitHeight="30.0" fitWidth="30.0"/>
+            </graphic>
+        </Button>
+
+                <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#openSettingView" styleClass="btn">
+            <graphic>
+                <ImageView  fx:id="settingIcon" fitHeight="30.0" fitWidth="30.0"/>
+            </graphic>
+        </Button>
+    </HBox>
+
+    <HBox alignment="CENTER">
+        <ImageView  fx:id="clear30Lines" fitHeight="63.2" fitWidth="196.8"/>
+    </HBox>
+
+    <HBox spacing="15">
+        <VBox.margin>
+            <Insets top="30" />
+        </VBox.margin>
+        <HBox styleClass="box" prefWidth="123.2" prefHeight="65"  >
+            <padding>
+                <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
+            </padding>
+            <Label  text="Hold" styleClass="status_label"  />
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER">
+                <Canvas fx:id="currentPlayCanvas" width="50" height="50" />
+
+            </VBox>
+        </HBox>
+        <HBox styleClass="box" prefWidth="261.8" prefHeight="65" HBox.hgrow="ALWAYS">
+            <padding>
+                <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
+            </padding>
+            <Label  text="Next" styleClass="status_label" />
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="16.4">
+                <VBox alignment="CENTER">
+                    <Canvas fx:id="nextCanvas1" width="50" height="50" />
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Canvas fx:id="nextCanvas2" width="50" height="50" />
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Canvas fx:id="nextCanvas3" width="50" height="50" />
+                </VBox>
+            </HBox>
+        </HBox>
+    </HBox>
+<!--    fx:id="gamePane"-->
+    <Pane styleClass="box" style="-fx-pref-width: 385; -fx-pref-height: 600; -fx-background-color: black;">
+<!--         Thêm Canvas vào đây -->
+
+        <VBox.margin >
+            <Insets top="15" />
+        </VBox.margin>
+        <Canvas fx:id="gameCanvas" width="385.0" height="600.0" />
+    </Pane>
+
+    <HBox>
+        <VBox.margin>
+            <Insets top="15" />
+        </VBox.margin>
+        <HBox  styleClass="box" prefWidth="130.4" prefHeight="48" >
+            <padding>
+                <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
+            </padding>
+            <Label  text="Score" style="-fx-text-fill: white; -fx-font-size: 12px;" />
+            <HBox  HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label fx:id="scoreLabel" text="0" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+            </HBox>
+        </HBox>
+
+        <Region HBox.hgrow="ALWAYS" />
+        <VBox alignment="CENTER">
+            <Button focusTraversable="false" onMouseClicked="#handleReloadGame" styleClass="btn">
+                <graphic>
+                    <ImageView  fx:id="reloadIcon" fitHeight="34.3" fitWidth="34.3"/>
+                </graphic>
+            </Button>
+
+        </VBox>
+        <HBox>
+            <padding>
+                <Insets  left="30.0" right="30.0" />
+            </padding>
+            <VBox alignment="CENTER">
+                <VBox.margin>
+                    <Insets right="35" left="25"/>
+                </VBox.margin>
+                <Button focusTraversable="false" onMouseClicked="#handleToggleActionIcon" styleClass="btn">
+                    <graphic>
+                        <ImageView  fx:id="actionIcon" fitHeight="30" fitWidth="18"/>
+                    </graphic>
+                </Button>
+            </VBox>
+        </HBox>
+    </HBox>
+</VBox>

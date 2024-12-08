@@ -1,9 +1,7 @@
 package controllers;
 
 import javafx.stage.Stage;
-import views.MainMenu;
-
-import javax.swing.text.View;
+import controllers.PlayingViewController;
 
 public class ViewController {
     private static Stage stage;
@@ -22,16 +20,23 @@ public class ViewController {
     }
 
     public static void getChooseLevelView() throws Exception {
-        ChooseLevelViewController.view(stage);
+        ChooseLevelViewController chooseLevelViewController = new ChooseLevelViewController();
+        chooseLevelViewController.view(stage);
     }
 
-    public static void getWinGameView() throws Exception {
+    public static void getPlayingView() throws Exception {
+        PlayingViewController playingViewController = new PlayingViewController();
+        playingViewController.view(stage);
+    }
+  
+  public static void getWinGameView() throws Exception {
         WinGameViewController.view(stage);
     }
 
     public static void getLoseGameView() throws Exception {
         LoseGameViewController.view(stage);
     }
+ 
 
     public void setStage(Stage stage) {
         ViewController.stage = stage;
