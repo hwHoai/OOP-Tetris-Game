@@ -23,8 +23,6 @@ public class SettingViewController implements BackwardScreen {
     private ImageView backBtnIcon;
     @FXML
     private ImageView musicIcon;
-    @FXML
-    private ImageView soundIcon;
 
     //------------------------------------------------------------------------------------------------------//
 
@@ -35,15 +33,6 @@ public class SettingViewController implements BackwardScreen {
             musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-off.png").toExternalForm()));
         } else {
             musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
-        }
-    }
-
-    //If the user change the sound volume, the sound icon will change
-    public void onSoundSliderChange(MouseEvent mouseEvent) {
-        if(soundSlider.getValue() == 0) {
-            soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound-mute.png").toExternalForm()));
-        } else {
-            soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound.png").toExternalForm()));
         }
     }
 
@@ -74,7 +63,6 @@ public class SettingViewController implements BackwardScreen {
     public void initialize() {
         backBtnIcon.setImage(new Image(getClass().getResource("/assets/icon/back.png").toExternalForm()));
         musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
-        soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound.png").toExternalForm()));
     }
 
     //------------------------------------------------------------------------------------------------------//

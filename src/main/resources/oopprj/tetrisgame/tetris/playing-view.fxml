@@ -71,7 +71,7 @@
         </HBox>
     </HBox>
 <!--    fx:id="gamePane"-->
-    <Pane styleClass="box" style="-fx-background-color: black;">
+    <Pane styleClass="box" style="-fx-pref-width: 385; -fx-pref-height: 600; -fx-background-color: black;">
 <!--         Thêm Canvas vào đây -->
 
         <VBox.margin >

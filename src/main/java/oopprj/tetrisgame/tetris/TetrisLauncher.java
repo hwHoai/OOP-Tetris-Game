@@ -10,7 +10,7 @@ import java.io.File;
 
 public class TetrisLauncher extends Application {
     public static double widthScreen = 430;
-    public static double heightScreen = Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 50 ;
+    public static double heightScreen = 930 ;
     @Override
     public void start(Stage stage) throws Exception {
 

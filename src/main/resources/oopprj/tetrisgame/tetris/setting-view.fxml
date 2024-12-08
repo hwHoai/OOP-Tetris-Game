@@ -23,7 +23,6 @@
         </Label>
         <ImageView fx:id="musicIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="200"/>
         <Slider fx:id="musicSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="230" onMouseDragged="#onMusicSliderChange"/>
-        <ImageView fx:id="soundIcon" fitWidth="50" fitHeight="50" layoutX="50" layoutY="300"/>
-        <Slider fx:id="soundSlider" min="0" max="100" value="50" blockIncrement="1" layoutX="120" layoutY="330" onMouseDragged="#onSoundSliderChange"/>
+
 
 </AnchorPane>
