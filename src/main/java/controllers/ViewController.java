@@ -28,7 +28,15 @@ public class ViewController {
         PlayingViewController playingViewController = new PlayingViewController();
         playingViewController.view(stage);
     }
+  
+  public static void getWinGameView() throws Exception {
+        WinGameViewController.view(stage);
+    }
 
+    public static void getLoseGameView() throws Exception {
+        LoseGameViewController.view(stage);
+    }
+ 
 
     public void setStage(Stage stage) {
         ViewController.stage = stage;
