@@ -7,15 +7,69 @@ public class ZPiece extends Piece{
 
     public ZPiece() {
         super(new Block[]{
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 0, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width, 0, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width, 20, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width * 2, 20, "#800080"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 0, "#D41E3C"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width, 0, "#D41E3C"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width, 20, "#D41E3C"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width) + Block.width * 2, 20, "#D41E3C"),
         });
     }
 
     @Override
     public void rotate() {
+        switch (getForm()) {
+            case 1:{
+                if(!isLeftCollided() && !isRightCollided()) {
+                    int nexPosOfBlock0 = PlayView.board[(int) (getBlocks()[0].getTranslateX()) / Block.width][(int) (getBlocks()[0].getTranslateY() + (Block.height*1)) / Block.height];
+                    int nexPosOfBlock1 = PlayView.board[(int) (getBlocks()[1].getTranslateX() - (Block.width)) / Block.width][(int) (getBlocks()[1].getTranslateY()) / Block.height];
+                    int nexPosOfBlock2 = PlayView.board[(int) (getBlocks()[2].getTranslateX()) / Block.width][(int) (getBlocks()[2].getTranslateY() - (Block.height*1)) / Block.height];
+                    int nexPosOfBlock3 = PlayView.board[(int) (getBlocks()[3].getTranslateX() - (Block.width*1)) / Block.width][(int) (getBlocks()[3].getTranslateY() - (Block.height*2)) / Block.height];
+                    if( nexPosOfBlock0 == 0 && nexPosOfBlock0 == nexPosOfBlock1 && nexPosOfBlock1 == nexPosOfBlock2 && nexPosOfBlock2 == nexPosOfBlock3) {
+                        getBlocks()[0].moveDown();
 
+                        getBlocks()[1].moveLeft();
+
+                        getBlocks()[2].moveUp();
+
+                        getBlocks()[3].moveLeft();
+                        getBlocks()[3].moveUp();
+                        getBlocks()[3].moveUp();
+                        if(getForm() != 2) {
+                            setForm(getForm() + 1);
+                        }
+                        else {
+                            setForm(1);
+                        }
+                    }
+                }
+                break;
+            }
+            case 2:{
+                if(!isLeftCollided() && !isRightCollided()) {
+                    int nexPosOfBlock0 = PlayView.board[(int) (getBlocks()[0].getTranslateX()) / Block.width][(int) (getBlocks()[0].getTranslateY() - (Block.height * 1)) / Block.height];
+                    int nexPosOfBlock1 = PlayView.board[(int) (getBlocks()[2].getTranslateX() + (Block.width * 1)) / Block.width][(int) (getBlocks()[2].getTranslateY()) / Block.height];
+                    int nexPosOfBlock2 = PlayView.board[(int) (getBlocks()[2].getTranslateX()) / Block.width][(int) (getBlocks()[2].getTranslateY() + (Block.height * 1)) / Block.height];
+                    int nexPosOfBlock3 = PlayView.board[(int) (getBlocks()[3].getTranslateX() + (Block.width * 1)) / Block.width][(int) (getBlocks()[3].getTranslateY() + (Block.height * 2)) / Block.height];
+                    if (nexPosOfBlock0 == 0 && nexPosOfBlock0 == nexPosOfBlock1 && nexPosOfBlock1 == nexPosOfBlock2 && nexPosOfBlock2 == nexPosOfBlock3) {
+                        getBlocks()[0].moveUp();
+
+                        getBlocks()[1].moveRight();
+
+                        getBlocks()[2].moveDown();
+
+                        getBlocks()[3].moveRight();
+                        getBlocks()[3].moveDown();
+                        getBlocks()[3].moveDown();
+                        if(getForm() != 2) {
+                            setForm(getForm() + 1);
+                        }
+                        else {
+                            setForm(1);
+                        }
+                    }
+                }
+                break;
+
+            }
+        }
     }
 }

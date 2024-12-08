@@ -7,22 +7,16 @@ public class IPiece extends Piece {
 
     public IPiece() {
         super(new Block[]{
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 0, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 20, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 40, "#800080"),
-                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 60, "#800080"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 0, "#00FFFF"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 20, "#00FFFF"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 40, "#00FFFF"),
+                new Block((int) (Math.floor(PlayView.COLS / 2 ) * Block.width), 60, "#00FFFF"),
 
         });
     }
 
     @Override
     public void rotate() {
-        if(getForm() < 4) {
-            setForm(getForm() + 1);
-        }
-        else {
-            setForm(0);
-        }
         switch (getForm()) {
             case 1:{
                 if(!isLeftCollided() && !isRightCollided()) {
@@ -40,19 +34,17 @@ public class IPiece extends Piece {
 
                         getBlocks()[3].moveRight();
                         getBlocks()[3].moveUp();
-                        break;
+                        if(getForm() != 2) {
+                            setForm(getForm() + 1);
+                        }
+                        else {
+                            setForm(1);
+                        }
                     }
                 }
-
-                if (getForm() > 0) {
-                    setForm(0);
-                } else {
-                    setForm(1);
-                }
-
                 break;
             }
-            case 0:{
+            case 2:{
                 if(!isLeftCollided() && !isRightCollided()) {
                     int nexPosOfBlock0 = PlayView.board[(int) (getBlocks()[0].getTranslateX() + (Block.width * 2)) / Block.width][(int) (getBlocks()[0].getTranslateY() - (Block.height * 2)) / Block.height];
                     int nexPosOfBlock1 = PlayView.board[(int) (getBlocks()[1].getTranslateX() + (Block.width * 1)) / Block.width][(int) (getBlocks()[1].getTranslateY() - (Block.height * 1)) / Block.height];
@@ -68,14 +60,13 @@ public class IPiece extends Piece {
 
                         getBlocks()[3].moveDown();
                         getBlocks()[3].moveLeft();
-                        break;
+                        if(getForm() != 2) {
+                            setForm(getForm() + 1);
+                        }
+                        else {
+                            setForm(1);
+                        }
                     }
-                }
-                if(getForm() > 0) {
-                    setForm(0);
-                }
-                else {
-                    setForm(1);
                 }
                 break;
 

@@ -10,7 +10,7 @@ public abstract class Piece implements PieceActions {
     private final int width = PlayView.COLS * blockSize;
     private final int height = PlayView.ROWS * blockSize;
     private Block[] blocks;
-    private int form = 0;
+    private int form = 1;
 
     public Piece(Block[] blocks) {
         this.blocks = blocks;
