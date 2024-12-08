@@ -56,6 +56,7 @@ public class PlayingViewController implements BackwardScreen {
         PlayingView.displayView(stage);
     }
 
+    @Override
     public void backToMainScreen() throws Exception {
         ViewController.getMainView();
     }
@@ -78,6 +79,8 @@ public class PlayingViewController implements BackwardScreen {
         tetrisGame.setCurrentTetrimino(nextTetriminos.remove(0));
         nextTetriminos.add(tetrisGame.createRandomTetrimino());
 
+
+
         gameLoop = new AnimationTimer() {
             private long lastUpdate = 0;
 
@@ -92,11 +95,12 @@ public class PlayingViewController implements BackwardScreen {
                 }
             }
         };
+//        gameCanvas.setFocusTraversable(true);
+        gameCanvas.requestFocus();// Đảm bảo canvas nhận sự kiện phím
         gameLoop.start();
         renderNextTetriminos();
         renderCurrentPlay();
-        gameCanvas.setFocusTraversable(true); // Đảm bảo canvas nhận sự kiện phím
-        gameCanvas.setOnKeyPressed(event -> handleKeyPress(event));
+//        gameCanvas.setOnKeyPressed(event -> handleKeyPress(event));
     }
 
 
@@ -145,7 +149,7 @@ public class PlayingViewController implements BackwardScreen {
         gc.clearRect(0, 0, currentPlayCanvas.getWidth(), currentPlayCanvas.getHeight());
         gc.setFill(tetrimino.getColor());
         for (int[] block : tetrimino.getRelativeBlocks()) {
-            gc.fillRect(block[0] * 10 + offsetX, block[1] * 10 + offsetY, 10, 10);
+            gc.fillRect((block[0] * 10 + offsetX) - 1, (block[1] * 10 + offsetY) - 1, 10 - 1, 10 - 1);
         }
     }
 
@@ -166,7 +170,8 @@ public class PlayingViewController implements BackwardScreen {
 
 
     @FXML
-    private void handleKeyPress(KeyEvent event) {
+    public void handleKeyPress(KeyEvent event) {
+        System.out.println("Key pressed: " + event.getCode());
         if (isPaused) return;
 
         switch (event.getCode()) {
@@ -201,5 +206,8 @@ public class PlayingViewController implements BackwardScreen {
         gameLoop.start();
     }
 
+    public void openSettingView() throws Exception {
+        ViewController.getSettingView();
+    }
 
 }
