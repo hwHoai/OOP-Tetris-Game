@@ -1,14 +1,17 @@
 package models;
+import controllers.PlayingViewController;
 import controllers.ViewController;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+
+import static controllers.PlayingViewController.getGameLoop;
 
 public class TetrisGame {
     private final int width, height;
     private final Color[][] grid; // Sử dụng mảng màu thay vì mảng số
     private Tetrimino currentTetrimino;
     private final GraphicsContext gc;
-    private int score;
+    private static int score;
     private static int scorePlus;
 
     public TetrisGame(int width, int height, GraphicsContext gc) {
@@ -89,6 +92,7 @@ public class TetrisGame {
         // Nếu hang đầu tiên có màu, kết thúc trò chơi
         for(Color col : grid[0]) {
             if(col != null) {
+                PlayingViewController.getGameLoop().stop();
                 ViewController.getLoseGameView();
             }
         }
@@ -109,6 +113,7 @@ public class TetrisGame {
                 clearRow(y);
                 score += scorePlus; // Thêm điểm cho mỗi hàng
                 if(score >= 100) {
+                    PlayingViewController.getGameLoop().stop();
                     ViewController.getWinGameView();
                 }
             }
@@ -125,8 +130,8 @@ public class TetrisGame {
         }
     }
 
-    public int getScore() {
-        return score;
+    public static int getScore() {
+        return TetrisGame.score;
     }
 
     public void render() {

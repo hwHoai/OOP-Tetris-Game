@@ -46,7 +46,7 @@ public class PlayingViewController implements BackwardScreen {
     private Canvas nextCanvas3;
 
     private TetrisGame tetrisGame;
-    private AnimationTimer gameLoop;
+    private static AnimationTimer gameLoop;
     private List<Tetrimino> nextTetriminos = new LinkedList<>();
 
     private boolean isPaused = false;
@@ -218,6 +218,10 @@ public class PlayingViewController implements BackwardScreen {
     public void openSettingView() throws Exception {
         ViewController.setPreviousScene(ViewController.getStage().getScene());
         ViewController.getSettingView();
+    }
+
+    public static AnimationTimer getGameLoop() {
+        return gameLoop;
     }
 
 }
