@@ -46,7 +46,7 @@ public class PlayingViewController implements BackwardScreen {
     private Canvas nextCanvas3;
 
     private TetrisGame tetrisGame;
-    private AnimationTimer gameLoop;
+    private static AnimationTimer gameLoop;
     private List<Tetrimino> nextTetriminos = new LinkedList<>();
 
     private boolean isPaused = false;
@@ -59,6 +59,11 @@ public class PlayingViewController implements BackwardScreen {
     @Override
     public void backToMainScreen() throws Exception {
         ViewController.getMainView();
+    }
+
+    @Override
+    public void backToPrevScreen() throws Exception {
+        // Do nothing
     }
 
     @FXML
@@ -88,7 +93,11 @@ public class PlayingViewController implements BackwardScreen {
             public void handle(long now) {
                 if (now - lastUpdate >= 500_000_000) {
                     if (!tetrisGame.moveTetrimino(0, 1)) {
-                        lockAndSpawnTetrimino();
+                        try {
+                            lockAndSpawnTetrimino();
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
                     }
                     tetrisGame.render();
                     lastUpdate = now;
@@ -105,7 +114,7 @@ public class PlayingViewController implements BackwardScreen {
 
 
 
-    private void lockAndSpawnTetrimino() {
+    private void lockAndSpawnTetrimino() throws Exception {
         tetrisGame.lockTetrimino();
         scoreLabel.setText(String.valueOf(tetrisGame.getScore()));
 
@@ -207,7 +216,12 @@ public class PlayingViewController implements BackwardScreen {
     }
 
     public void openSettingView() throws Exception {
+        ViewController.setPreviousScene(ViewController.getStage().getScene());
         ViewController.getSettingView();
+    }
+
+    public static AnimationTimer getGameLoop() {
+        return gameLoop;
     }
 
 }

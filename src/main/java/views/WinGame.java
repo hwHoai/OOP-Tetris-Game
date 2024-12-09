@@ -12,8 +12,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import models.TetrisGame;
 
 import static controllers.WinGameViewController.handleClickNextLevelButton;
+
 
 public class WinGame {
     public final SimpleIntegerProperty score = new SimpleIntegerProperty(0);
@@ -25,7 +27,7 @@ public class WinGame {
         titleText.setFont(Font.font("Arial", 30));
         titleText.setFill(Color.web("#00FF00"));
 
-        Text scoreText = new Text("Score: " + ""/*score*/);
+        Text scoreText = new Text("Score: " + TetrisGame.getScore());
         scoreText.setFont(Font.font("Arial", 18));
         scoreText.setFill(Color.web("#FFFFFF"));
 

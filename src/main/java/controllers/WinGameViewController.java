@@ -9,6 +9,6 @@ public class WinGameViewController {
     }
 
     public static void handleClickNextLevelButton() throws Exception {
-//        Logic here
+        ViewController.getChooseLevelView();
     }
 }

@@ -3,11 +3,13 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import oopprj.tetrisgame.tetris.TetrisLauncher;
 import utils.BackwardScreen;
 import views.SettingMenu;
 
@@ -22,8 +24,6 @@ public class SettingViewController implements BackwardScreen {
     private ImageView backBtnIcon;
     @FXML
     private ImageView musicIcon;
-    @FXML
-    private ImageView soundIcon;
 
     //------------------------------------------------------------------------------------------------------//
 
@@ -35,21 +35,23 @@ public class SettingViewController implements BackwardScreen {
         } else {
             musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
         }
+
+        System.out.printf("Music volume: %.2f\n", musicSlider.getValue());
+
+        TetrisLauncher.setMusicVolume(musicSlider.getValue());
     }
 
-    //If the user change the sound volume, the sound icon will change
-    public void onSoundSliderChange(MouseEvent mouseEvent) {
-        if(soundSlider.getValue() == 0) {
-            soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound-mute.png").toExternalForm()));
-        } else {
-            soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound.png").toExternalForm()));
-        }
+    //If the user click the back button, the view will back to the previous screen
+
+    @Override
+    public void backToPrevScreen() throws Exception {
+        ViewController.getStage().setScene(ViewController.previousScene);
+        ViewController.getStage().show();
     }
 
-    //If the user click the back button, the view will back to the main screen
     @Override
     public void backToMainScreen() throws Exception {
-        ViewController.getMainView();
+        // Do nothing
     }
 
     //------------------------------------------------------------------------------------------------------//
@@ -66,10 +68,8 @@ public class SettingViewController implements BackwardScreen {
     public void initialize() {
         backBtnIcon.setImage(new Image(getClass().getResource("/assets/icon/back.png").toExternalForm()));
         musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
-        soundIcon.setImage(new Image(getClass().getResource("/assets/icon/sound.png").toExternalForm()));
     }
 
     //------------------------------------------------------------------------------------------------------//
     //End.
 }
-
