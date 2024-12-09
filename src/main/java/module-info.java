@@ -7,6 +7,7 @@ module oopprj.tetrisgame.tetris {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires javafx.swing;
+    requires javafx.media;
 
     opens oopprj.tetrisgame.tetris to javafx.fxml;
     exports oopprj.tetrisgame.tetris;

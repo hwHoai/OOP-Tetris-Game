@@ -1,7 +1,7 @@
 package controllers;
 
-import java.lang.classfile.Label;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import views.MainMenu;
 import javafx.scene.image.Image;
