@@ -1,4 +1,5 @@
 package models;
+import controllers.LoseGameViewController;
 import controllers.PlayingViewController;
 import controllers.ViewController;
 import javafx.scene.canvas.GraphicsContext;
@@ -93,6 +94,17 @@ public class TetrisGame {
         for(Color col : grid[0]) {
             if(col != null) {
                 PlayingViewController.getGameLoop().stop();
+                switch (scorePlus) {
+                    case 100:
+                        LoseGameViewController.setPrevLevel("easy");
+                        break;
+                    case 75:
+                        LoseGameViewController.setPrevLevel("normal");
+                        break;
+                    case 50:
+                        LoseGameViewController.setPrevLevel("hard");
+                        break;
+                }
                 ViewController.getLoseGameView();
             }
         }

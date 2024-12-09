@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import oopprj.tetrisgame.tetris.TetrisLauncher;
 import utils.BackwardScreen;
 import views.SettingMenu;
 
@@ -34,6 +35,10 @@ public class SettingViewController implements BackwardScreen {
         } else {
             musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
         }
+
+        System.out.printf("Music volume: %.2f\n", musicSlider.getValue());
+
+        TetrisLauncher.setMusicVolume(musicSlider.getValue());
     }
 
     //If the user click the back button, the view will back to the previous screen
