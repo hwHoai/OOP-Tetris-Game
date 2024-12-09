@@ -4,17 +4,36 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import views.MainMenu;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class MainViewController {
     @FXML
-    private Label welcomeText;
+    private ImageView startingImage;
+
+    @FXML
+    private Text text;
+
+    @FXML
+    private Label continueText;
 
     public static void view(Stage stage) throws Exception {
-        MainMenu.view(stage);
+        MainMenu.displayView(stage);
     }
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void initialize() {
+
+        startingImage.setImage(new Image(getClass().getResource("/images/startingImage.png").toExternalForm()));
     }
+
+    @FXML
+        public void onNewGameButtonClick() throws Exception {
+            ViewController.getChooseLevelView();
+        }
+
+        public void onSettingButtonClick() throws Exception {
+            ViewController.getSettingView();
+        }
 }
