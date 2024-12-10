@@ -26,6 +26,5 @@ public class MusicController {
         } else {
             mediaPlayer.setVolume(volume);
         }
-        System.out.printf("Volume: %f\n", mediaPlayer.getVolume());
     }
 }

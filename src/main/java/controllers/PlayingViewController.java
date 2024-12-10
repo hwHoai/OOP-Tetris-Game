@@ -104,12 +104,10 @@ public class PlayingViewController implements BackwardScreen {
                 }
             }
         };
-//        gameCanvas.setFocusTraversable(true);
         gameCanvas.requestFocus();// Đảm bảo canvas nhận sự kiện phím
         gameLoop.start();
         renderNextTetriminos();
         renderCurrentPlay();
-//        gameCanvas.setOnKeyPressed(event -> handleKeyPress(event));
     }
 
 
@@ -180,7 +178,6 @@ public class PlayingViewController implements BackwardScreen {
 
     @FXML
     public void handleKeyPress(KeyEvent event) {
-        System.out.println("Key pressed: " + event.getCode());
         if (isPaused) return;
 
         switch (event.getCode()) {
