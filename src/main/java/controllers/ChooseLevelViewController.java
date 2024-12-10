@@ -16,7 +16,7 @@ public class ChooseLevelViewController {
 
     @FXML
     public void initialize() {
-        backArrowIcon.setImage(new Image(getClass().getResource("/images/arrow_left.png").toExternalForm()));
+        backArrowIcon.setImage(new Image(getClass().getResource("/assets/images/arrow_left.png").toExternalForm()));
     }
 
     @FXML

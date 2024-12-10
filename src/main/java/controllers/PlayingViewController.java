@@ -31,8 +31,8 @@ public class PlayingViewController implements BackwardScreen {
     private ImageView reloadIcon;
     @FXML
     private ImageView actionIcon;
-    private final Image pauseIcon = new Image(getClass().getResourceAsStream("/images/pause.png"));
-    private final Image continueIcon = new Image(getClass().getResourceAsStream("/images/continue.png"));
+    private final Image pauseIcon = new Image(getClass().getResourceAsStream("/assets/images/pause.png"));
+    private final Image continueIcon = new Image(getClass().getResourceAsStream("/assets/images/continue.png"));
     @FXML
     private Label scoreLabel;
 
@@ -68,11 +68,11 @@ public class PlayingViewController implements BackwardScreen {
 
     @FXML
     public void initialize() {
-        homeIcon.setImage(new Image(getClass().getResource("/images/home.png").toExternalForm()));
-        settingIcon.setImage(new Image(getClass().getResource("/images/setting.png").toExternalForm()));
-        clear30Lines.setImage(new Image(getClass().getResource("/images/clear30Lines.png").toExternalForm()));
+        homeIcon.setImage(new Image(getClass().getResource("/assets/images/home.png").toExternalForm()));
+        settingIcon.setImage(new Image(getClass().getResource("/assets/images/setting.png").toExternalForm()));
+        clear30Lines.setImage(new Image(getClass().getResource("/assets/images/clear30Lines.png").toExternalForm()));
 
-        reloadIcon.setImage(new Image(getClass().getResource("/images/reload.png").toExternalForm()));
+        reloadIcon.setImage(new Image(getClass().getResource("/assets/images/reload.png").toExternalForm()));
         actionIcon.setImage(pauseIcon);
         tetrisGame = new TetrisGame(13, 20, gameCanvas.getGraphicsContext2D());
         // Initialize next tetriminos

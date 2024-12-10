@@ -15,7 +15,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.PlayingViewController"
       style="-fx-padding: 15;"
-      stylesheets="@../../../styles/playing.css">
+      stylesheets="@../../../assets/styles/playing.css">
 
     <HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.0">
         <Button focusTraversable="false" onAction="#backToMainScreen" styleClass="btn">
