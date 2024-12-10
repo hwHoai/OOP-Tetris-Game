@@ -111,7 +111,7 @@ public class TetrisGame {
             if (isFull) {
                 clearRow(y);
                 score += scorePlus; // Thêm điểm cho mỗi hàng
-                if(score >= 200) {
+                if(score >= 3000) {
                     PlayingViewController.getGameLoop().stop();
                     ViewController.getWinGameView();
                 }
