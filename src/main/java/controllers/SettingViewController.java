@@ -36,8 +36,6 @@ public class SettingViewController implements BackwardScreen {
             musicIcon.setImage(new Image(getClass().getResource("/assets/icon/music-setting.png").toExternalForm()));
         }
 
-        System.out.printf("Music volume: %.2f\n", musicSlider.getValue());
-
         TetrisLauncher.setMusicVolume(musicSlider.getValue());
     }
 

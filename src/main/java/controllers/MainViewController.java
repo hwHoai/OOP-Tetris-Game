@@ -25,7 +25,7 @@ public class MainViewController {
     @FXML
     public void initialize() {
 
-        startingImage.setImage(new Image(getClass().getResource("/images/startingImage.png").toExternalForm()));
+        startingImage.setImage(new Image(getClass().getResource("/assets/images/startingImage.png").toExternalForm()));
     }
 
     @FXML
