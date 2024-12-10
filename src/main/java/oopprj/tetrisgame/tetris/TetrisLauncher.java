@@ -22,7 +22,7 @@ public class TetrisLauncher extends Application {
         new ViewController(stage);
 
         ViewController.getMainView();
-        musicController = new MusicController(0.5);
+        musicController = new MusicController(50);
         musicController.playMusic();
     }
 

@@ -21,15 +21,12 @@ public class TetrisGame {
         this.grid = new Color[height][width]; // Khởi tạo mảng màu
         this.gc = gc;
         this.score = 0;
-//        spawnNewTetrimino();
     }
 
     public Tetrimino createRandomTetrimino() {
         int type = (int) (Math.random() * Tetrimino.SHAPES.length);
         return new Tetrimino(type, width / 2 - 1, 0); // Đặt tọa độ bắt đầu
 
-//        int type = (int) (Math.random() * Tetrimino.SHAPES.length);
-//        return new Tetrimino(type, 0, 0);
 
     }
 
@@ -40,15 +37,6 @@ public class TetrisGame {
     public void setCurrentTetrimino(Tetrimino tetrimino) {
         this.currentTetrimino = tetrimino;
     }
-
-//    public void spawnNewTetrimino() {
-//        int type = (int) (Math.random() * Tetrimino.SHAPES.length);
-//        currentTetrimino = new Tetrimino(type, width / 2 - 1, 0);
-//
-//        if (!canMoveTo(currentTetrimino.getBlocks())) {
-//            throw new IllegalStateException("Game Over");
-//        }
-//    }
 
     private boolean canMoveTo(int[][] blocks) {
         for (int[] block : blocks) {
@@ -109,7 +97,6 @@ public class TetrisGame {
             }
         }
         clearFullRows();
-//        spawnNewTetrimino();
     }
 
     private void clearFullRows() throws Exception {
@@ -124,7 +111,7 @@ public class TetrisGame {
             if (isFull) {
                 clearRow(y);
                 score += scorePlus; // Thêm điểm cho mỗi hàng
-                if(score >= 3000) {
+                if(score >= 200) {
                     PlayingViewController.getGameLoop().stop();
                     ViewController.getWinGameView();
                 }
