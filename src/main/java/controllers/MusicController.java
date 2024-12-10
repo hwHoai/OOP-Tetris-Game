@@ -19,8 +19,13 @@ public class MusicController {
         mediaPlayer.play();
     }
 
-    public void setVolume(double volume) {
+    public void setMusicVolume(double volume) {
         this.volume = volume;
-        mediaPlayer.setVolume(volume);
+        if(volume == 0) {
+            mediaPlayer.setVolume(0);
+        } else {
+            mediaPlayer.setVolume(volume);
+        }
+        System.out.printf("Volume: %f\n", mediaPlayer.getVolume());
     }
 }

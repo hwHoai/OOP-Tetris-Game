@@ -11,7 +11,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.ChooseLevelViewController"
       alignment="CENTER"
-      stylesheets="@../../../styles/chooseLevel.css">
+      stylesheets="@../../../assets/styles/chooseLevel.css">
 
     <HBox alignment="CENTER_LEFT">
         <padding>

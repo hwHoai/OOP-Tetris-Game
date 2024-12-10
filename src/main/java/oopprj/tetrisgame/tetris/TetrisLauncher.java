@@ -27,7 +27,7 @@ public class TetrisLauncher extends Application {
     }
 
     public static void setMusicVolume(double volume) {
-        musicController.setVolume(volume);
+        musicController.setMusicVolume(volume);
     }
 
     public static void main(String[] args) {
