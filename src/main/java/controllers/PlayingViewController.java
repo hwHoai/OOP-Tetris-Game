@@ -58,6 +58,7 @@ public class PlayingViewController implements BackwardScreen {
 
     @Override
     public void backToMainScreen() throws Exception {
+        gameLoop.stop();
         ViewController.getMainView();
     }
 
@@ -213,6 +214,9 @@ public class PlayingViewController implements BackwardScreen {
     }
 
     public void openSettingView() throws Exception {
+        gameLoop.stop();
+        isPaused = true;
+        actionIcon.setImage(continueIcon);
         ViewController.setPreviousScene(ViewController.getStage().getScene());
         ViewController.getSettingView();
     }
