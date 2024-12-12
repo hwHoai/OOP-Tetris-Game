@@ -15,9 +15,10 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.PlayingViewController"
       style="-fx-padding: 15;"
-      stylesheets="@../../../assets/styles/playing.css">
+      stylesheets="@../../../assets/styles/playing.css"
+      focusTraversable="false">
 
-    <HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.0">
+    <HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.0" focusTraversable="false">
         <Button focusTraversable="false" onAction="#backToMainScreen" styleClass="btn">
             <graphic>
                 <ImageView  fx:id="homeIcon" fitHeight="30.0" fitWidth="30.0"/>
@@ -25,66 +26,66 @@
         </Button>
 
                 <Region HBox.hgrow="ALWAYS" />
-        <Button onAction="#openSettingView" styleClass="btn">
+        <Button onAction="#openSettingView" styleClass="btn" focusTraversable="false">
             <graphic>
                 <ImageView  fx:id="settingIcon" fitHeight="30.0" fitWidth="30.0"/>
             </graphic>
         </Button>
     </HBox>
 
-    <HBox alignment="CENTER">
+    <HBox alignment="CENTER" focusTraversable="false">
         <ImageView  fx:id="clear30Lines" fitHeight="63.2" fitWidth="196.8"/>
     </HBox>
 
-    <HBox spacing="15">
+    <HBox spacing="15" focusTraversable="false">
         <VBox.margin>
             <Insets top="30" />
         </VBox.margin>
-        <HBox styleClass="box" prefWidth="123.2" prefHeight="65"  >
+        <HBox styleClass="box" prefWidth="123.2" prefHeight="65" focusTraversable="false" >
             <padding>
                 <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
             </padding>
             <Label  text="Hold" styleClass="status_label"  />
             <Region HBox.hgrow="ALWAYS" />
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" focusTraversable="false">
                 <Canvas fx:id="currentPlayCanvas" width="50" height="50" />
 
             </VBox>
         </HBox>
-        <HBox styleClass="box" prefWidth="261.8" prefHeight="65" HBox.hgrow="ALWAYS">
+        <HBox styleClass="box" prefWidth="261.8" prefHeight="65" HBox.hgrow="ALWAYS" focusTraversable="false">
             <padding>
                 <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
             </padding>
-            <Label  text="Next" styleClass="status_label" />
+            <Label  text="Next" styleClass="status_label" focusTraversable="false" />
             <Region HBox.hgrow="ALWAYS" />
-            <HBox spacing="16.4">
-                <VBox alignment="CENTER">
+            <HBox spacing="16.4" focusTraversable="false">
+                <VBox alignment="CENTER" focusTraversable="false">
                     <Canvas fx:id="nextCanvas1" width="50" height="50" />
                 </VBox>
-                <VBox alignment="CENTER">
+                <VBox alignment="CENTER" focusTraversable="false">
                     <Canvas fx:id="nextCanvas2" width="50" height="50" />
                 </VBox>
-                <VBox alignment="CENTER">
+                <VBox alignment="CENTER" focusTraversable="false">
                     <Canvas fx:id="nextCanvas3" width="50" height="50" />
                 </VBox>
             </HBox>
         </HBox>
     </HBox>
 <!--    fx:id="gamePane"-->
-    <Pane styleClass="box" style="-fx-pref-width: 385; -fx-pref-height: 600; -fx-background-color: black;">
+    <Pane styleClass="box" style="-fx-pref-width: 385; -fx-pref-height: 600; -fx-background-color: black;" focusTraversable="false">
 <!--         Thêm Canvas vào đây -->
 
         <VBox.margin >
             <Insets top="15" />
         </VBox.margin>
-        <Canvas fx:id="gameCanvas" width="385.0" height="600.0" />
+        <Canvas fx:id="gameCanvas" width="385.0" height="600.0" focusTraversable="false" />
     </Pane>
 
-    <HBox>
+    <HBox focusTraversable="false">
         <VBox.margin>
             <Insets top="15" />
         </VBox.margin>
-        <HBox  styleClass="box" prefWidth="130.4" prefHeight="48" >
+        <HBox  styleClass="box" prefWidth="130.4" prefHeight="48" focusTraversable="false">
             <padding>
                 <Insets top="6.0" left="6.0" right="6.0" bottom="6.0"/>
             </padding>
@@ -95,7 +96,7 @@
         </HBox>
 
         <Region HBox.hgrow="ALWAYS" />
-        <VBox alignment="CENTER">
+        <VBox alignment="CENTER" focusTraversable="false">
             <Button focusTraversable="false" onMouseClicked="#handleReloadGame" styleClass="btn">
                 <graphic>
                     <ImageView  fx:id="reloadIcon" fitHeight="34.3" fitWidth="34.3"/>
