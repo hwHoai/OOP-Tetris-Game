@@ -11,7 +11,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="controllers.MainViewController"
       alignment="CENTER"
-      stylesheets="@../../../assets/styles/starting.css">
+      stylesheets="@../../../assets/styles/starting.css" focusTraversable="false">
 
     <ImageView fx:id="startingImage"
                fitHeight="100.0"
