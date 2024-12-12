@@ -105,7 +105,6 @@ public class PlayingViewController implements BackwardScreen {
                 }
             }
         };
-        gameCanvas.requestFocus();// Đảm bảo canvas nhận sự kiện phím
         gameLoop.start();
         renderNextTetriminos();
         renderCurrentPlay();
@@ -210,6 +209,7 @@ public class PlayingViewController implements BackwardScreen {
         renderCurrentPlay();
         renderNextTetriminos();
         actionIcon.setImage(pauseIcon);
+        isPaused = false;
         gameLoop.start();
     }
 
